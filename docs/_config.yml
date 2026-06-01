@@ -1,7 +1,7 @@
 title: DOFH
 description: Digital Officer From Hell
 
-theme: minima
+theme: jekyll-theme-hacker
 
 baseurl: "/dofh"
 url: "https://thebiggeek.github.io"

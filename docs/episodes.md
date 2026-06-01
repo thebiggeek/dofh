@@ -5,8 +5,5 @@ title: Episodes
 
 # Episodes
 
-<ul>
-{% for episode in site.static_files %}
+{% for post in site.pages %}
 {% endfor %}
-
-- [DOFH #001 - The Portal](./_episodes/001-the-portal.html)

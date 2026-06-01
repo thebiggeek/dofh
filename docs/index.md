@@ -1,3 +1,8 @@
+---
+layout: default
+title: DOFH
+---
+
 # DOFH
 
 ## Digital Officer From Hell
@@ -7,7 +12,7 @@ bureaucracy and common sense collide.
 
 ---
 
-### Seasons
+## Seasons
 
 - Season 1 - The Portal
 - Season 2 - Cyber Security
