@@ -1,0 +1,48 @@
+name: Publish Next Episode
+
+on:
+schedule:
+- cron: '30 15 * * *'
+workflow_dispatch:
+
+permissions:
+contents: write
+
+jobs:
+publish:
+runs-on: ubuntu-latest
+
+```
+steps:
+  - uses: actions/checkout@v4
+
+  - name: Publish next episode
+    run: |
+      NEXT=$(find drafts -name "*.md" | sort | head -n 1)
+
+      if [ -z "$NEXT" ]; then
+        echo "No drafts remaining"
+        exit 0
+      fi
+
+      TARGET=$(echo "$NEXT" | sed 's#drafts/#episodes/#')
+
+      mkdir -p "$(dirname "$TARGET")"
+
+      mv "$NEXT" "$TARGET"
+
+      echo "Published $TARGET"
+
+  - name: Commit changes
+    run: |
+      git config user.name "DOFH Publisher"
+      git config user.email "actions@github.com"
+
+      git add .
+
+      git diff --cached --quiet || \
+      git commit -m "Publish next DOFH episode"
+
+      git push
+```
+

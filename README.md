@@ -18,11 +18,6 @@ Any resemblance to actual ministries, departments, agencies, corporations, porta
 
 ---
 
-### Current Season
-
-Season 1: The Portal
-
----
 
 System Status: Operational
 
