@@ -3,6 +3,14 @@ layout: default
 title: Home
 ---
 
+
+[Home](/dofh/) |
+[Episodes](/dofh/episodes.html) |
+[Lore](/dofh/lore.html) |
+[About](/dofh/about.html)
+
+---
+
 The Digital Officer From Hell appears wherever technology,
 bureaucracy, procurement and common sense collide.
 
