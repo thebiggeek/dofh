@@ -3,6 +3,8 @@ layout: default
 title: About
 ---
 
+{% include nav.html %}
+
 # About DOFH
 
 Digital Officer From Hell (DOFH) is a work of satire.

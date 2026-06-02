@@ -3,6 +3,8 @@ layout: default
 title: Lore
 ---
 
+{% include nav.html %}
+
 # Lore
 
 ## The Digital Officer From Hell

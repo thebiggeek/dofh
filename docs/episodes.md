@@ -3,6 +3,8 @@ layout: default
 title: Episodes
 ---
 
+{% include nav.html %}
+
 # Episodes
 
 ## Season 1 — The Portal
