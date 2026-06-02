@@ -1,22 +1,42 @@
 ---
 layout: default
-title: DOFH
+title: Home
 ---
 
-# DOFH
-
-## Digital Officer From Hell
-
 The Digital Officer From Hell appears wherever technology,
-bureaucracy and common sense collide.
+bureaucracy, procurement and common sense collide.
+
+---
+
+## Current Season
+
+### Season 3 — The Great Digital Transformation
+
+Episode 011 — *The Announcement*
+
+Scheduled for release at **9:00 PM IST**.
 
 ---
 
 ## Seasons
 
-- Season 1 - The Portal
-- Season 2 - Cyber Security
-- Season 3 - The Great Digital Transformation
+### Season 1 — The Portal
+
+Episodes 001–005
+
+### Season 2 — Cyber Security
+
+Episodes 006–010
+
+### Season 3 — The Great Digital Transformation
+
+Episodes 011–020
+
+---
+
+> "The transformation has been successful."
+>
+> — Final Report, probably
 
 ---
 
