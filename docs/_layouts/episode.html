@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% include nav.html %}
+
+{{ content }}
+
+<hr>
+
+{%- comment -%}
+  Prev/next links. We sort the whole collection by episode number, find the
+  index of the current page, then look up the neighbours. Liquid does NOT allow
+  a filter inside array brackets (e.g. array[i | minus: 1]), so each index is
+  assigned to its own variable first.
+{%- endcomment -%}
+{% assign ordered = site.episodes | sort: "number" %}
+{% assign total = ordered | size %}
+
+{% assign idx = nil %}
+{% for ep in ordered %}
+  {% if ep.number == page.number %}
+    {% assign idx = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+<nav class="episode-nav">
+{% if idx and idx > 0 %}
+  {% assign previdx = idx | minus: 1 %}
+  {% assign prev = ordered[previdx] %}
+  <a href="{{ prev.url | relative_url }}">&laquo; #{{ prev.number }} {{ prev.title }}</a>
+{% endif %}
+
+{% assign last_idx = total | minus: 1 %}
+{% if idx and idx < last_idx %}
+  {% assign nextidx = idx | plus: 1 %}
+  {% assign next = ordered[nextidx] %}
+  {% if idx > 0 %}&nbsp;|&nbsp;{% endif %}
+  <a href="{{ next.url | relative_url }}">#{{ next.number }} {{ next.title }} &raquo;</a>
+{% endif %}
+</nav>
+
+<p><a href="{{ '/episodes.html' | relative_url }}">&larr; All episodes</a></p>

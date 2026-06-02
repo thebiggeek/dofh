@@ -7,41 +7,28 @@ title: Episodes
 
 # Episodes
 
-## Season 1 — The Portal
+{%- comment -%}
+  Everything below is generated from the `episodes` collection.
+  When the nightly workflow publishes a new file into docs/_episodes/,
+  it appears here automatically. No manual editing required.
+{%- endcomment -%}
 
-- 001 The Portal
-- 002 The OTP
-- 003 The Committee
-- 004 The Leak
-- 005 The Internet Shutdown
+{% assign ordered = site.episodes | sort: "number" %}
 
----
+{% assign seasons = ordered | map: "season" | uniq | sort %}
+{% for s in seasons %}
+## Season {{ s }}{% assign first_in_season = ordered | where: "season", s | first %} — {{ first_in_season.season_title }}
 
-## Season 2 — Cyber Security
-
-- 006 The Vulnerability
-- 007 Responsible Disclosure
-- 008 The Advisory
-- 009 The Dashboard
-- 010 The Root Cause Analysis
-
----
-
-## Season 3 — The Great Digital Transformation
-
-### Upcoming
-
-- 011 The Announcement
-- 012 The Vendor
-- 013 The Pilot
-- 014 The Go-Live
-- 015 The Scanner
-- 016 The Wrong Record
-- 017 The Portal
-- 018 The Experts
-- 019 The Assurance
-- 020 The Lessons Learned
+{% assign season_eps = ordered | where: "season", s %}
+{% for ep in season_eps %}
+- [{{ ep.number | prepend: "00" | slice: -3, 3 }} {{ ep.title }}]({{ ep.url | relative_url }})
+{%- endfor %}
 
 ---
+{% endfor %}
+
+{% if ordered.size == 0 %}
+_No episodes published yet. Check back soon._
+{% endif %}
 
 New episodes are released daily at 9:00 PM IST.

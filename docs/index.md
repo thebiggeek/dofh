@@ -12,29 +12,33 @@ bureaucracy, procurement and common sense collide.
 
 ---
 
-## Current Season
+## Latest Episode
 
-### Season 3 — The Great Digital Transformation
+{%- comment -%} Auto-pulls the highest-numbered published episode. {%- endcomment -%}
+{% assign ordered = site.episodes | sort: "number" %}
+{% assign latest = ordered | last %}
+{% if latest %}
+### Season {{ latest.season }} — {{ latest.season_title }}
 
-Episode 011 — *The Announcement*
+**[#{{ latest.number }} — {{ latest.title }}]({{ latest.url | relative_url }})**
 
-Scheduled for release at **9:00 PM IST**.
+[Browse all episodes &raquo;]({{ '/episodes.html' | relative_url }})
+{% else %}
+_Episodes are on the way. New episodes release nightly at 9:00 PM IST._
+{% endif %}
 
 ---
 
 ## Seasons
 
 ### Season 1 — The Portal
-
 Episodes 001–005
 
 ### Season 2 — Cyber Security
-
 Episodes 006–010
 
 ### Season 3 — The Great Digital Transformation
-
-Episodes 011–020
+Episodes 011–020 — *releasing nightly*
 
 ---
 
