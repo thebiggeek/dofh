@@ -1,0 +1,29 @@
+title: DOFH
+description: Tales from the intersection of bureaucracy, technology and unintended consequences.
+
+theme: jekyll-theme-hacker
+
+baseurl: "/dofh"
+url: "https://thebiggeek.github.io"
+
+# --- Episodes collection -----------------------------------------------------
+# This is the piece that was missing. Declaring the collection tells Jekyll to
+# turn every file in docs/_episodes/ into a real web page. Without this block,
+# the _episodes folder is silently ignored and nothing renders.
+collections:
+  episodes:
+    output: true
+    permalink: /episodes/:path/
+
+# Default layout for episode documents (so individual files don't have to repeat it).
+defaults:
+  - scope:
+      path: ""
+      type: episodes
+    values:
+      layout: episode
+
+header_pages:
+  - episodes.md
+  - lore.md
+  - about.md
