@@ -4,7 +4,7 @@ title: "The Root Cause Analysis"
 number: 10
 season: 2
 season_title: "Cyber Security"
-date: 2025-05-10
+date: 2026-05-03
 permalink: /episodes/010-the-root-cause-analysis/
 ---
 

@@ -4,7 +4,7 @@ title: "The OTP"
 number: 2
 season: 1
 season_title: "The Portal"
-date: 2025-05-02
+date: 2026-03-08
 permalink: /episodes/002-the-otp/
 ---
 

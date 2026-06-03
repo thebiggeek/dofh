@@ -4,7 +4,7 @@ title: "The Advisory"
 number: 8
 season: 2
 season_title: "Cyber Security"
-date: 2025-05-08
+date: 2026-04-19
 permalink: /episodes/008-the-advisory/
 ---
 

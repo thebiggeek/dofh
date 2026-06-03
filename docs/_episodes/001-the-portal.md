@@ -4,7 +4,7 @@ title: "The Portal"
 number: 1
 season: 1
 season_title: "The Portal"
-date: 2025-05-01
+date: 2026-03-01
 permalink: /episodes/001-the-portal/
 ---
 

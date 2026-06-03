@@ -4,7 +4,7 @@ title: "The Internet Shutdown"
 number: 5
 season: 1
 season_title: "The Portal"
-date: 2025-05-05
+date: 2026-03-29
 permalink: /episodes/005-the-internet-shutdown/
 ---
 

@@ -4,15 +4,20 @@ layout: default
 
 {% include nav.html %}
 
+<p class="episode-meta">
+  <strong>Season {{ page.season }} — {{ page.season_title }}</strong><br>
+  Episode {{ page.number }}
+  {% if page.date %}· Published {{ page.date | date: "%-d %B %Y" }}{% endif %}
+</p>
+
 {{ content }}
 
 <hr>
 
 {%- comment -%}
-  Prev/next links. We sort the whole collection by episode number, find the
-  index of the current page, then look up the neighbours. Liquid does NOT allow
-  a filter inside array brackets (e.g. array[i | minus: 1]), so each index is
-  assigned to its own variable first.
+  Prev/next links. Sort the collection by number, find the current index, then
+  look up neighbours. Liquid forbids a filter inside array brackets, so each
+  index is assigned to its own variable first.
 {%- endcomment -%}
 {% assign ordered = site.episodes | sort: "number" %}
 {% assign total = ordered | size %}

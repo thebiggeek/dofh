@@ -4,7 +4,7 @@ title: "The Leak"
 number: 4
 season: 1
 season_title: "The Portal"
-date: 2025-05-04
+date: 2026-03-22
 permalink: /episodes/004-the-leak/
 ---
 

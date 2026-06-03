@@ -4,7 +4,7 @@ title: "The Committee"
 number: 3
 season: 1
 season_title: "The Portal"
-date: 2025-05-03
+date: 2026-03-15
 permalink: /episodes/003-the-committee/
 ---
 

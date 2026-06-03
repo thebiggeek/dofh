@@ -4,7 +4,7 @@ title: "The Dashboard"
 number: 9
 season: 2
 season_title: "Cyber Security"
-date: 2025-05-09
+date: 2026-04-26
 permalink: /episodes/009-the-dashboard/
 ---
 

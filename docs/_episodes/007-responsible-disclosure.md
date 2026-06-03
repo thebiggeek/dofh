@@ -4,7 +4,7 @@ title: "Responsible Disclosure"
 number: 7
 season: 2
 season_title: "Cyber Security"
-date: 2025-05-07
+date: 2026-04-12
 permalink: /episodes/007-responsible-disclosure/
 ---
 
