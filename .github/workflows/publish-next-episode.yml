@@ -1,48 +1,48 @@
-name: Publish Next Episode
+name: Publish next episode
+
+# Releases one Season 3 episode per night.
+# 9:00 PM IST == 15:30 UTC (GitHub cron runs in UTC).
+# Scheduled runs are best-effort and can be delayed a few minutes at peak times.
+# To release on demand (or test), use the "Run workflow" button below.
 
 on:
-schedule:
-- cron: '30 15 * * *'
-workflow_dispatch:
+  schedule:
+    - cron: "30 15 * * *"   # 21:00 IST daily
+  workflow_dispatch:         # manual trigger from the Actions tab
 
+# Lets the job push the new episode file back to the repo.
 permissions:
-contents: write
+  contents: write
+
+concurrency:
+  group: nightly-release
+  cancel-in-progress: false
 
 jobs:
-publish:
-runs-on: ubuntu-latest
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-```
-steps:
-  - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-  - name: Publish next episode
-    run: |
-      NEXT=$(find drafts -name "*.md" | sort | head -n 1)
+      - name: Publish next episode
+        id: publish
+        run: python scripts/publish_next_episode.py
 
-      if [ -z "$NEXT" ]; then
-        echo "No drafts remaining"
-        exit 0
-      fi
-
-      TARGET=$(echo "$NEXT" | sed 's#drafts/#episodes/#')
-
-      mkdir -p "$(dirname "$TARGET")"
-
-      mv "$NEXT" "$TARGET"
-
-      echo "Published $TARGET"
-
-  - name: Commit changes
-    run: |
-      git config user.name "DOFH Publisher"
-      git config user.email "actions@github.com"
-
-      git add .
-
-      git diff --cached --quiet || \
-      git commit -m "Publish next DOFH episode"
-
-      git push
-```
-
+      - name: Commit and push if an episode was published
+        if: steps.publish.outputs.published == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/_episodes/
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit."
+          else
+            git commit -m "Release DOFH #${{ steps.publish.outputs.number }} - ${{ steps.publish.outputs.title }}"
+            git push
+          fi
