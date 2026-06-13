@@ -18,10 +18,10 @@ import sys
 import glob
 import datetime
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(**file**)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dofh_lib import build_episode_doc, parse_episode  # noqa: E402
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(**file**)))
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRAFTS_ROOT = os.path.join(REPO, "drafts")
 EPISODES_OUT = os.path.join(REPO, "docs", "_episodes")
 
