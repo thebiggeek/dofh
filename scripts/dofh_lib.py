@@ -23,6 +23,8 @@ SEASONS = {
     1: (range(1, 6),   "The Portal"),
     2: (range(6, 11),  "Cyber Security"),
     3: (range(11, 21), "The Great Digital Transformation"),
+    4: (range(21, 31), "The Reckoning"),
+    5: (range(31, 41), "The Accountability"),
 }
 
 
