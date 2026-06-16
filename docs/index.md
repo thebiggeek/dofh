@@ -22,23 +22,12 @@ bureaucracy, procurement and common sense collide.
 
 **[#{{ latest.number }} — {{ latest.title }}]({{ latest.url | relative_url }})**
 
+_Released {{ latest.date | date: "%B %-d, %Y" }}_
+
 [Browse all episodes &raquo;]({{ '/episodes.html' | relative_url }})
 {% else %}
 _Episodes are on the way. New episodes release nightly at 9:00 PM IST._
 {% endif %}
-
----
-
-## Seasons
-
-### Season 1 — The Portal
-Episodes 001–005
-
-### Season 2 — Cyber Security
-Episodes 006–010
-
-### Season 3 — The Great Digital Transformation
-Episodes 011–020 — *releasing nightly*
 
 ---
 
