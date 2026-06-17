@@ -6,6 +6,17 @@ theme: jekyll-theme-hacker
 baseurl: "/dofh"
 url: "https://thebiggeek.github.io"
 
+# Build the site on IST, the same clock the publish script stamps episode dates
+# with. Without this, the build server runs in UTC, so an episode published in
+# the IST evening/night gets a date that looks like "the future" to the builder.
+timezone: Asia/Kolkata
+
+# A future-dated document is kept in the episodes list (so the home page links
+# to it) but its page is NOT written -> the link 404s while the file is fine in
+# the repo. Writing future-dated docs prevents that, even if a run drifts past
+# midnight or the clocks are slightly out of step.
+future: true
+
 # --- Episodes collection -----------------------------------------------------
 # This is the piece that was missing. Declaring the collection tells Jekyll to
 # turn every file in docs/_episodes/ into a real web page. Without this block,
